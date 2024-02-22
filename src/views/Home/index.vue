@@ -77,8 +77,8 @@ function initTableData() {
             tableData.value = tableData.value.concat(JSON.parse(JSON.stringify(orginPersonData)))
         }
     }
-    else{
-        tableData.value=orginPersonData.slice(0, totalCount)
+    else {
+        tableData.value = orginPersonData.slice(0, totalCount)
     }
     tableData.value = filterData(tableData.value.slice(0, totalCount), rowCount.value)
 }
@@ -356,9 +356,9 @@ const enterLottery = async () => {
         randomBallData()
     }
     if (patternList.value.length) {
-        for(let i=0;i<patternList.value.length;i++){
-            if(i<rowCount.value*7){
-                objects.value[patternList.value[i]-1].element.style.backgroundColor = rgba(cardColor.value, Math.random() * 0.5 + 0.25)
+        for (let i = 0; i < patternList.value.length; i++) {
+            if (i < rowCount.value * 7) {
+                objects.value[patternList.value[i] - 1].element.style.backgroundColor = rgba(cardColor.value, Math.random() * 0.5 + 0.25)
             }
         }
     }
@@ -418,7 +418,7 @@ const startLottery = () => {
     }
     toast.open({
         message: `现在抽取${currentPrize.value.name} ${leftover}人`,
-        type:'default',
+        type: 'default',
         position: 'top-right',
         duration: 8000
     })
