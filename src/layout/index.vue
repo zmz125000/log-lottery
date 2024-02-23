@@ -20,15 +20,9 @@ const scrollToTop = () => {
       <Header></Header>
     </header> -->
     <ToTop @click="scrollToTop" v-if="y > 400"></ToTop>
-    <main ref="mainContainer" class="box-content w-screen h-screen overflow-x-hidden overflow-y-auto main-container"
-      style="
-    background: url(/background1.png) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-">
-      <router-view class="h-full main-container-content"></router-view>
+    <main ref="mainContainer" class="box-content w-screen h-screen overflow-x-hidden overflow-y-auto main-container">
+
+      <router-view class="h-full main-container-content" style="position: absolute; z-index: 10;"></router-view>
 
     </main>
     <!-- <footer class="w-screen footer-container">

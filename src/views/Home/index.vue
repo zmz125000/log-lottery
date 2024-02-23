@@ -96,11 +96,11 @@ const init = () => {
     camera.value.position.z = cameraZ.value
     renderer.value = new CSS3DRenderer()
     //书签
-    renderer.value.setSize(width * 0.9, height * 0.9)
+    renderer.value.setSize(width, height * 0.9)
     renderer.value.domElement.style.position = 'absolute';
     // 垂直居中
     renderer.value.domElement.style.paddingTop = '50px'
-    renderer.value.domElement.style.top = '50%';
+    renderer.value.domElement.style.top = '45%';
     renderer.value.domElement.style.left = '50%';
     renderer.value.domElement.style.transform = 'translate(-50%, -50%)';
     WebGLoutput!.appendChild(renderer.value.domElement);
@@ -364,7 +364,7 @@ const enterLottery = async () => {
         }
     }
     canOperate.value = false
-    await transform(targets.sphere, 1000)
+    await transform(targets.sphere, 500)
     currentStatus.value = 1
     rollBall(0.1, 2000)
 }
@@ -422,7 +422,7 @@ const startLottery = () => {
         message: `现在抽取${currentPrize.value.name} ${leftover}人`,
         type: 'default',
         position: 'top-right',
-        duration: 8000
+        duration: 18000
     })
     currentStatus.value = 2
     rollBall(10, 3000)
@@ -442,7 +442,7 @@ const stopLottery = async () => {
         let cardIndex = selectCard(luckyCardList.value, tableData.value.length, person.id)
         luckyCardList.value.push(cardIndex)
         let item = objects.value[cardIndex]
-        const { xTable, yTable } = useElementPosition(item, rowCount.value, { width: cardSize.value.width * 3.1, height: cardSize.value.height * 3.1 }, windowSize, index)
+        const { xTable, yTable } = useElementPosition(item, rowCount.value, { width: cardSize.value.width * 3, height: cardSize.value.height * 3 }, windowSize, index)
         new TWEEN.Tween(item.position)
             .to({
                 x: xTable,
@@ -451,7 +451,7 @@ const stopLottery = async () => {
             }, 1200)
             .easing(TWEEN.Easing.Exponential.InOut)
             .onStart(() => {
-                item.element = useElementStyle(item.element, person, cardIndex, patternList.value, patternColor.value, luckyColor.value, { width: cardSize.value.width * 3.1, height: cardSize.value.height * 3.1 }, textSize.value * 3.1, 'lucky')
+                item.element = useElementStyle(item.element, person, cardIndex, patternList.value, patternColor.value, luckyColor.value, { width: cardSize.value.width * 3, height: cardSize.value.height * 3 }, textSize.value * 3, 'lucky')
             })
             .start()
             .onComplete(() => {
@@ -640,6 +640,11 @@ onUnmounted(() => {
             <button v-if="tableData.length <= 0" class="cursor-pointer btn btn-outline btn-secondary btn-lg"
                 @click="setDefaultPersonList">使用默认数据</button>
         </div>
+    </div>
+    <div class="blurContainer">
+        <img id="iconNatoRecognition" src="/background1.png" style=" 
+    width: 100%;
+    height: 100%; -webkit-filter: blur(50px);">
     </div>
     <div id="container" ref="containerRef" class="3dContainer">
 
