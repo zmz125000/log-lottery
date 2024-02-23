@@ -96,13 +96,13 @@ const init = () => {
     camera.value.position.z = cameraZ.value
     renderer.value = new CSS3DRenderer()
     //书签
-    renderer.value.setSize(width, height * 0.9)
+    renderer.value.setSize(width * 1, height * 1)
     renderer.value.domElement.style.position = 'absolute';
     // 垂直居中
-    renderer.value.domElement.style.paddingTop = '50px'
-    renderer.value.domElement.style.top = '45%';
-    renderer.value.domElement.style.left = '50%';
-    renderer.value.domElement.style.transform = 'translate(-50%, -50%)';
+    renderer.value.domElement.style.paddingTop = '0px'
+    renderer.value.domElement.style.top = '0%';
+    renderer.value.domElement.style.left = '0%';
+    renderer.value.domElement.style.transform = 'translate(0%, -3%)';
     WebGLoutput!.appendChild(renderer.value.domElement);
 
     controls.value = new TrackballControls(camera.value, renderer.value.domElement);
@@ -206,8 +206,7 @@ const init = () => {
         }
     }
     window.addEventListener('resize', onWindowResize, false);
-    transform(targets.table, 1000)
-    render();
+
 }
 
 const transform = (targets: any[], duration: number) => {
@@ -350,6 +349,12 @@ function render() {
     renderer.value.render(scene.value, camera.value);
 }
 const enterLottery = async () => {
+    var jyxbg = document.querySelector("#jyxbg")
+    if (jyxbg) {
+        jyxbg.style.webkitFilter = 'blur(50px)'
+    }
+    transform(targets.table, 1000)
+    render();
     if (!canOperate.value) {
         return
     }
@@ -498,8 +503,8 @@ const continueLottery = async () => {
     await enterLottery()
 }
 const quitLottery = () => {
-    enterLottery()
-    currentStatus.value = 0
+    //enterLottery()
+    //currentStatus.value = 0
 }
 // 庆祝动画
 const confettiFire = () => {
@@ -642,9 +647,9 @@ onUnmounted(() => {
         </div>
     </div>
     <div class="blurContainer">
-        <img id="iconNatoRecognition" src="/background1.png" style=" 
+        <img id="jyxbg" src="/background1.png" style=" 
     width: 100%;
-    height: 100%; -webkit-filter: blur(50px);">
+    height: 100%; -webkit-filter: blur(0px);">
     </div>
     <div id="container" ref="containerRef" class="3dContainer">
 
