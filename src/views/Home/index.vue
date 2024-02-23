@@ -647,7 +647,7 @@ onUnmounted(() => {
         </div>
     </div>
     <div class="blurContainer">
-        <img id="jyxbg" src="/background1.png" style=" 
+        <img id="jyxbg" src="/background_final.jpg" style=" 
     width: 100%;
     height: 100%; -webkit-filter: blur(0px);">
     </div>
