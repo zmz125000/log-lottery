@@ -95,7 +95,8 @@ const init = () => {
     camera.value = new PerspectiveCamera(felidView, aspect, nearPlane, farPlane);
     camera.value.position.z = cameraZ.value
     renderer.value = new CSS3DRenderer()
-    renderer.value.setSize(width, height * 0.9)
+    //书签
+    renderer.value.setSize(width * 0.9, height * 0.9)
     renderer.value.domElement.style.position = 'absolute';
     // 垂直居中
     renderer.value.domElement.style.paddingTop = '50px'
@@ -441,7 +442,7 @@ const stopLottery = async () => {
         let cardIndex = selectCard(luckyCardList.value, tableData.value.length, person.id)
         luckyCardList.value.push(cardIndex)
         let item = objects.value[cardIndex]
-        const { xTable, yTable } = useElementPosition(item, rowCount.value, { width: cardSize.value.width * 2, height: cardSize.value.height * 2 }, windowSize, index)
+        const { xTable, yTable } = useElementPosition(item, rowCount.value, { width: cardSize.value.width * 4, height: cardSize.value.height * 4 }, windowSize, index)
         new TWEEN.Tween(item.position)
             .to({
                 x: xTable,
@@ -450,7 +451,7 @@ const stopLottery = async () => {
             }, 1200)
             .easing(TWEEN.Easing.Exponential.InOut)
             .onStart(() => {
-                item.element = useElementStyle(item.element, person, cardIndex, patternList.value, patternColor.value, luckyColor.value, { width: cardSize.value.width * 2, height: cardSize.value.height * 2 }, textSize.value * 2, 'lucky')
+                item.element = useElementStyle(item.element, person, cardIndex, patternList.value, patternColor.value, luckyColor.value, { width: cardSize.value.width * 4, height: cardSize.value.height * 4 }, textSize.value * 2, 'lucky')
             })
             .start()
             .onComplete(() => {
