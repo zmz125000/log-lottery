@@ -738,7 +738,7 @@ onUnmounted(() => {
     transition: 0.5s;
     animation: gradient_301 5s ease infinite;
     border: double 4px transparent;
-    background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%, #FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+    background-image: linear-gradient(#fe3636, #784747), linear-gradient(137.48deg, #ffdb3b 10%, #FE53BB 45%, #8F51EA 67%, #0044ff 87%);
     background-origin: border-box;
     background-clip: content-box, border-box;
     -webkit-animation: pulsate-fwd 1.2s ease-in-out infinite both;

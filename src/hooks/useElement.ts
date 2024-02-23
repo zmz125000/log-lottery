@@ -75,7 +75,7 @@ export const useElementPosition = (element: any, count: number, cardSize: { widt
     let yTable = 0
     const centerPosition = {
         x: 0,
-        y: windowSize.height / 2
+        y: windowSize.height / 2 - 140
     }
     //书签每行显示几个
     const index = cardIndex % 3

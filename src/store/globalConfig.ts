@@ -7,7 +7,7 @@ export const useGlobalConfig = defineStore('global', {
         return {
             globalConfig: {
                 rowCount: 17,
-                isSHowPrizeList: true,
+                isSHowPrizeList: false,
                 topTitle: '',
                 theme: {
                     name: 'dracula',
@@ -212,7 +212,7 @@ export const useGlobalConfig = defineStore('global', {
         reset() {
             this.globalConfig = {
                 rowCount: 17,
-                isSHowPrizeList: true,
+                isSHowPrizeList: false,
                 topTitle: '',
                 theme: {
                     name: 'dracula',
