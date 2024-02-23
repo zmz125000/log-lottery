@@ -497,8 +497,8 @@ const continueLottery = async () => {
     await enterLottery()
 }
 const quitLottery = () => {
-    enterLottery()
-    currentStatus.value = 0
+    //enterLottery()
+    //currentStatus.value = 0
 }
 // 庆祝动画
 const confettiFire = () => {
