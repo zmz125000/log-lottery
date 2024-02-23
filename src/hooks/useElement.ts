@@ -1,14 +1,14 @@
 import { rgba } from '@/utils/color'
 import { IPersonConfig } from '@/types/storeType'
 
-export const useElementStyle = (element: any, person: IPersonConfig, index: number, patternList: number[], patternColor: string, cardColor: string, cardSize: { width: number, height: number }, textSize: number, mod: 'default' | 'lucky'|'sphere' = 'default') => {
-    if (patternList.includes(index+1)&&mod=='default') {
+export const useElementStyle = (element: any, person: IPersonConfig, index: number, patternList: number[], patternColor: string, cardColor: string, cardSize: { width: number, height: number }, textSize: number, mod: 'default' | 'lucky' | 'sphere' = 'default') => {
+    if (patternList.includes(index + 1) && mod == 'default') {
         element.style.backgroundColor = rgba(patternColor, Math.random() * 0.2 + 0.8)
     }
-    else if(mod=='sphere'||mod=='default') {
+    else if (mod == 'sphere' || mod == 'default') {
         element.style.backgroundColor = rgba(cardColor, Math.random() * 0.5 + 0.25)
     }
-    else if(mod=='lucky'){
+    else if (mod == 'lucky') {
         element.style.backgroundColor = rgba(cardColor, 0.8)
     }
     element.style.border = `1px solid ${rgba(cardColor, 0.25)}`
@@ -75,16 +75,17 @@ export const useElementPosition = (element: any, count: number, cardSize: { widt
     let yTable = 0
     const centerPosition = {
         x: 0,
-        y: windowSize.height / 2 - cardSize.height / 2
+        y: windowSize.height / 2
     }
-    const index = cardIndex % 5
+    //书签每行显示几个
+    const index = cardIndex % 3
     if (index == 0) {
         xTable = centerPosition.x
-        yTable = centerPosition.y - Math.floor(cardIndex / 5) * (cardSize.height + 60)
+        yTable = centerPosition.y - Math.floor(cardIndex / 3) * (cardSize.height + 60)
     }
     else {
         xTable = index % 2 === 0 ? Math.ceil(index / 2) * (cardSize.width + 100) : -Math.ceil(index / 2) * (cardSize.width + 100)
-        yTable = centerPosition.y - Math.floor(cardIndex / 5) * (cardSize.height + 60)
+        yTable = centerPosition.y - Math.floor(cardIndex / 3) * (cardSize.height + 60)
     }
 
     return { xTable, yTable }

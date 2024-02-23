@@ -283,7 +283,7 @@ function rollBall(rotateY: number, duration: number) {
 
     return new Promise((resolve) => {
         scene.value.rotation.y = 0;
-        ballRotationY.value = Math.PI * rotateY * 1000
+        ballRotationY.value = Math.PI * rotateY * 500
         const rotateObj = new TWEEN.Tween(scene.value.rotation);
         rotateObj
             .to(
@@ -395,7 +395,8 @@ const startLottery = () => {
 
         return;
     }
-    luckyCount.value = 10
+    luckyCount.value = 6
+    // 书签
     // 自定义抽奖个数
 
     let leftover = currentPrize.value.count - currentPrize.value.isUsedCount
