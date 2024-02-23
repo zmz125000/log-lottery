@@ -442,7 +442,7 @@ const stopLottery = async () => {
         let cardIndex = selectCard(luckyCardList.value, tableData.value.length, person.id)
         luckyCardList.value.push(cardIndex)
         let item = objects.value[cardIndex]
-        const { xTable, yTable } = useElementPosition(item, rowCount.value, { width: cardSize.value.width * 4, height: cardSize.value.height * 4 }, windowSize, index)
+        const { xTable, yTable } = useElementPosition(item, rowCount.value, { width: cardSize.value.width * 3.1, height: cardSize.value.height * 3.1 }, windowSize, index)
         new TWEEN.Tween(item.position)
             .to({
                 x: xTable,
@@ -451,7 +451,7 @@ const stopLottery = async () => {
             }, 1200)
             .easing(TWEEN.Easing.Exponential.InOut)
             .onStart(() => {
-                item.element = useElementStyle(item.element, person, cardIndex, patternList.value, patternColor.value, luckyColor.value, { width: cardSize.value.width * 4, height: cardSize.value.height * 4 }, textSize.value * 2, 'lucky')
+                item.element = useElementStyle(item.element, person, cardIndex, patternList.value, patternColor.value, luckyColor.value, { width: cardSize.value.width * 3.1, height: cardSize.value.height * 3.1 }, textSize.value * 3.1, 'lucky')
             })
             .start()
             .onComplete(() => {
@@ -498,8 +498,8 @@ const continueLottery = async () => {
     await enterLottery()
 }
 const quitLottery = () => {
-    //enterLottery()
-    //currentStatus.value = 0
+    enterLottery()
+    currentStatus.value = 0
 }
 // 庆祝动画
 const confettiFire = () => {
