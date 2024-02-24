@@ -206,7 +206,6 @@ const init = () => {
         }
     }
     window.addEventListener('resize', onWindowResize, false);
-
 }
 
 const transform = (targets: any[], duration: number) => {
@@ -352,6 +351,7 @@ const enterLottery = async () => {
     var jyxbg = document.querySelector("#jyxbg")
     if (jyxbg) {
         jyxbg.style.webkitFilter = 'blur(50px)'
+        jyxbg.src = '/prizebg1.jpg'
     }
     transform(targets.table, 1000)
     render();
