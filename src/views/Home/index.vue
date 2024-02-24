@@ -46,6 +46,7 @@ const camera = ref()
 const renderer = ref()
 const controls = ref()
 const objects = ref<any[]>([])
+let enteredLottery = false
 
 const targets = {
     grid: <any[]>[],
@@ -345,9 +346,12 @@ function resetCamera() {
 }
 
 function render() {
-    renderer.value.render(scene.value, camera.value);
+    if (enteredLottery) {
+        renderer.value.render(scene.value, camera.value);
+    }
 }
 const enterLottery = async () => {
+    enteredLottery = true
     var jyxbg = document.querySelector("#jyxbg")
     if (jyxbg) {
         jyxbg.style.webkitFilter = 'blur(50px)'
