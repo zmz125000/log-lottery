@@ -64,105 +64,168 @@ export const defaultMusicList = [
 export const defaultPrizeList = <IPrizeConfig[]>[
     {
         id: '001',
-        name: '幸运奖-手撕面包1箱',
+        name: '幸运奖：手撕面包1箱',
         sort: 1,
         isAll: false,
         count: 30,
         isUsedCount: 0,
         picture: {
             id: '2',
-            name: '幸运奖-手撕面包1箱',
+            name: '幸运奖：手撕面包1箱',
             url: 'https://24years.top/resource/image/image3.png'
         },
         separateCount: {
             enable: true,
             countList: []
         },
-        desc: '幸运奖-手撕面包1箱',
+        desc: '幸运奖：手撕面包1箱',
         isShow: true,
         isUsed: false,
         frequency: 1,
     },
     {
         id: '002',
-        name: '幸运奖-寿桃鸡蛋面1箱',
+        name: '幸运奖：寿桃鸡蛋面1箱',
         sort: 2,
         isAll: false,
         count: 25,
         isUsedCount: 0,
         picture: {
             id: '1',
-            name: '幸运奖-寿桃鸡蛋面1箱',
+            name: '幸运奖：寿桃鸡蛋面1箱',
             url: 'https://24years.top/resource/image/image2.png'
         },
         separateCount: {
             enable: false,
             countList: []
         },
-        desc: '幸运奖-寿桃鸡蛋面1箱',
+        desc: '幸运奖：寿桃鸡蛋面1箱',
         isShow: true,
         isUsed: false,
         frequency: 1,
     },
     {
         id: '003',
-        name: '幸运奖-寿桃竹升面1箱',
+        name: '幸运奖：寿桃竹升面1箱',
         sort: 3,
         isAll: false,
         count: 25,
         isUsedCount: 0,
         picture: {
             id: '0',
-            name: '幸运奖-寿桃竹升面1箱',
+            name: '幸运奖：寿桃竹升面1箱',
             url: 'https://24years.top/resource/image/image1.png'
         },
         separateCount: {
             enable: false,
             countList: []
         },
-        desc: '幸运奖-寿桃竹升面1箱',
+        desc: '幸运奖：寿桃竹升面1箱',
         isShow: true,
         isUsed: false,
         frequency: 1,
     },
     {
         id: '004',
-        name: '麦片礼盒',
+        name: '三等奖：麦片礼盒',
         sort: 4,
         isAll: false,
         count: 14,
         isUsedCount: 0,
         picture: {
             id: '3',
-            name: '麦片礼盒',
+            name: '三等奖：麦片礼盒',
             url: 'https://24years.top/resource/image/image4.png'
         },
         separateCount: {
             enable: false,
             countList: []
         },
-        desc: '麦片礼盒',
+        desc: '三等奖：麦片礼盒',
         isShow: true,
         isUsed: false,
         frequency: 1,
     },
     {
         id: '005',
-        name: '黑芝麻糊礼盒',
+        name: '三等奖：黑芝麻糊礼盒',
         sort: 5,
         isAll: false,
         count: 16,
         isUsedCount: 0,
         picture: {
             id: '4',
-            name: '黑芝麻糊礼盒',
+            name: '三等奖：黑芝麻糊礼盒',
             url: 'https://24years.top/resource/image/image5.png'
         },
         separateCount: {
             enable: false,
             countList: []
         },
-        desc: '黑芝麻糊礼盒',
+        desc: '三等奖：黑芝麻糊礼盒',
+        isShow: true,
+        isUsed: false,
+        frequency: 1,
+    },
+    {
+        id: '006',
+        name: '二等奖：元朗大礼包/皇上皇大礼包',
+        sort: 6,
+        isAll: false,
+        count: 10,
+        isUsedCount: 0,
+        picture: {
+            id: '4',
+            name: '二等奖：元朗大礼包/皇上皇大礼包',
+            url: 'https://24years.top/resource/image/image5.png'
+        },
+        separateCount: {
+            enable: false,
+            countList: []
+        },
+        desc: '二等奖：元朗大礼包/皇上皇大礼包',
+        isShow: true,
+        isUsed: false,
+        frequency: 1,
+    },
+    {
+        id: '007',
+        name: '一等奖：现金红包300元',
+        sort: 7,
+        isAll: false,
+        count: 6,
+        isUsedCount: 0,
+        picture: {
+            id: '4',
+            name: '一等奖：现金红包300元',
+            url: 'https://24years.top/resource/image/image5.png'
+        },
+        separateCount: {
+            enable: false,
+            countList: []
+        },
+        desc: '一等奖：现金红包300元',
+        isShow: true,
+        isUsed: false,
+        frequency: 1,
+    },
+    {
+        id: '008',
+        name: '一等奖：现金红包600元',
+        sort: 8,
+        isAll: false,
+        count: 3,
+        isUsedCount: 0,
+        picture: {
+            id: '4',
+            name: '一等奖：现金红包600元',
+            url: 'https://24years.top/resource/image/image5.png'
+        },
+        separateCount: {
+            enable: false,
+            countList: []
+        },
+        desc: '一等奖：现金红包600元',
         isShow: true,
         isUsed: false,
         frequency: 1,
@@ -170,21 +233,21 @@ export const defaultPrizeList = <IPrizeConfig[]>[
 ]
 export const defaultCurrentPrize = <IPrizeConfig>{
     id: '001',
-    name: '幸运奖-手撕面包1箱',
+    name: '幸运奖：手撕面包1箱',
     sort: 1,
     isAll: false,
     count: 30,
     isUsedCount: 0,
     picture: {
         id: '2',
-        name: '幸运奖-手撕面包1箱',
+        name: '幸运奖：手撕面包1箱',
         url: 'https://24years.top/resource/image/image3.png'
     },
     separateCount: {
         enable: true,
         countList: []
     },
-    desc: '幸运奖-手撕面包1箱',
+    desc: '幸运奖：手撕面包1箱',
     isShow: true,
     isUsed: false,
     frequency: 1,
