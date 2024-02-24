@@ -63,6 +63,20 @@ const personPool = ref<IPersonConfig[]>([])
 const intervalTimer = ref<any>(null)
 // const currentPrizeValue = ref(JSON.parse(JSON.stringify(currentPrize.value)))
 
+function playSound(name: string) {
+    var audio = document.getElementById(name);
+    audio.play()
+}
+function playSoundLoop(name: string) {
+    var audio = document.getElementById(name);
+    audio.loop = true
+    audio.play()
+}
+function stopSound(name: string) {
+    var audio = document.getElementById(name);
+    audio.pause()
+    audio.currentTime = 0;
+}
 // 填充数据，填满七行
 function initTableData() {
     if (allPersonList.value.length <= 0) {
@@ -409,6 +423,7 @@ const startLottery = () => {
     // 书签
     // 自定义抽奖个数
 
+    playSoundLoop('audio1')
     let leftover = currentPrize.value.count - currentPrize.value.isUsedCount
     const customCount = currentPrize.value.separateCount
     if (customCount && customCount.enable && customCount.countList.length > 0) {
@@ -438,6 +453,8 @@ const startLottery = () => {
 }
 
 const stopLottery = async () => {
+    stopSound('audio1')
+    playSound('audio2')
     if (!canOperate.value) {
         return
     }
@@ -487,6 +504,7 @@ const continueLottery = async () => {
         return
     }
 
+    stopSound('audio2')
     const customCount = currentPrize.value.separateCount
     if (customCount && customCount.enable && customCount.countList.length > 0) {
         for (let i = 0; i < customCount.countList.length; i++) {
@@ -507,6 +525,8 @@ const continueLottery = async () => {
     await enterLottery()
 }
 const quitLottery = () => {
+    stopSound('audio1')
+    stopSound('audio2')
     //enterLottery()
     //currentStatus.value = 0
 }
@@ -656,6 +676,8 @@ onUnmounted(() => {
     height: 100%; -webkit-filter: blur(0px);">
     </div>
     <div id="container" ref="containerRef" class="3dContainer">
+        <audio id="audio1" src="/drawing.wav"></audio>
+        <audio id="audio2" src="/win.wav"></audio>
 
         <!-- 选中菜单结构 start-->
         <div id="menu">
