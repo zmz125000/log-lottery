@@ -477,7 +477,7 @@ const stopLottery = async () => {
             }, 1200)
             .easing(TWEEN.Easing.Exponential.InOut)
             .onStart(() => {
-                item.element = useElementStyle(item.element, person, cardIndex, patternList.value, patternColor.value, luckyColor.value, { width: cardSize.value.width * 3, height: cardSize.value.height * 3 }, textSize.value * 3, 'lucky')
+                item.element = useElementStyle(item.element, person, cardIndex, patternList.value, patternColor.value, luckyColor.value, { width: cardSize.value.width * 3, height: cardSize.value.height * 3 }, textSize.value * 4, 'lucky')
             })
             .start()
             .onComplete(() => {
@@ -676,7 +676,7 @@ onUnmounted(() => {
     height: 100%; -webkit-filter: blur(0px);">
     </div>
     <div id="container" ref="containerRef" class="3dContainer">
-        <audio id="audio1" src="/drawing.wav"></audio>
+        <audio id="audio1" src="/drawing2.m4a"></audio>
         <audio id="audio2" src="/win.wav"></audio>
 
         <!-- 选中菜单结构 start-->
